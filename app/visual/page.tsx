@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-const VisualPage = () => {
+const Visual = () => {
     return (
         <div className="flex justify-center items-center min-h-screen">
             {/* Blue Center */}
@@ -35,4 +35,4 @@ const VisualPage = () => {
 };
 
 
-export default VisualPage;
+export default Visual;
