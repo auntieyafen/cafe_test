@@ -20,4 +20,4 @@
 
 ### Playwright
 
-對 Next.js 需求中實現的頁面建立一個測試，內容為確保功能正確。
+run `npx playwright test`
