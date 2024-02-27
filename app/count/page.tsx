@@ -41,7 +41,6 @@ const Count = () => {
         }
     };
 
-
     return (
         <div className='flex min-h-screen justify-center items-center'>
             <div className={`text-center`}>

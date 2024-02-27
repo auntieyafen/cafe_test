@@ -6,6 +6,7 @@ test('Click to +5', async ({ page }) => {
 
     // Get the initial count
     const initialCount = await page.textContent('.font-semibold');
+    const initialCountNumber = Number(initialCount);
 
     await page.click('button');
 
