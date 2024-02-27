@@ -1,5 +1,3 @@
-import Head from 'next/head';
-
 const Visual = () => {
     return (
         <div className="flex justify-center items-center min-h-screen">
@@ -33,6 +31,5 @@ const Visual = () => {
         </div>
     );
 };
-
 
 export default Visual;
