@@ -1,11 +1,10 @@
 const Visual = () => {
     return (
         <div className="flex justify-center items-center min-h-screen">
-
             {/* Blue Center */}
-            <div className="relative bg-customBlue text-white rounded-[4px] w-[300px] h-[80px] shadow-customShadow flex grid grid-cols-2 divide-transparent divide-x border-hidden border-black">
+            <div className="relative bg-customBlue text-white rounded-[4px] w-[300px] h-[80px] 
+                            shadow-customShadow flex grid grid-cols-2 divide-transparent divide-x border-hidden border-black">
                 {/* Picture at left-up corner */}
-
                 <div className="absolute top-0 left-0 w-16 h-16">
                     {/* Image */}
                     <img
@@ -18,7 +17,6 @@ const Visual = () => {
                 <div className="flex items-center justify-center">
                     <p className="text-[12px]">Hello</p>
                 </div>
-
                 {/* Right part */}
                 <div className="flex items-center justify-center">
                     <ul>
