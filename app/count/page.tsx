@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 const Count = () => {
-    const [targetNumber, setTargetNumber] = useState(0);
+    const [targetNumber, setTargetNumber] = useState<number>(0);
     const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
     const [intervalTime, setIntervalTime] = useState(500);
     const [increment, setIncrement] = useState(0);
@@ -33,11 +33,11 @@ const Count = () => {
         }
     }, [increment]);
 
-    const handleClick = () => {
+    const handleClick = async () => {
         if (increment === 0) {
             setIncrement(targetNumber + 5);
         } else {
-            setIncrement(increment + 5);
+            setIncrement((prev) => prev + 5);
         }
     };
 
