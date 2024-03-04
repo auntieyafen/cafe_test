@@ -19,7 +19,7 @@ const config: Config = {
         'customGreen': '#c7ffad',
       },
       boxShadow: {
-        'customShadow': '8px 8px 6px 2px rgba(0, 0, 0, 0.2)',
+        'customShadow': '4px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       },
     },
   },
