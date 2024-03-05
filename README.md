@@ -9,11 +9,9 @@
 ![blue-center-block](image-2.png)
 
 ### Storybook
-
-![storybook](image-4.png)
+![storybook](image.png)
 
 ### Playwright
 
 run `npx playwright test tests`
-
-![test-result](image-3.png)
+![test-result](image-4.png)

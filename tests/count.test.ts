@@ -8,12 +8,23 @@ test('Click to +5', async ({ page }) => {
     const initialCount = await page.textContent('.font-semibold');
     const initialCountNumber = Number(initialCount);
 
+    console.log('Initial Count:', initialCountNumber);
+
     await page.click('button');
 
-    await page.waitForTimeout(2500);
+    await page.waitForTimeout(500);
+    await page.waitForTimeout(500);
+    await page.waitForTimeout(500);
+    await page.waitForTimeout(500);
+    await page.waitForTimeout(500);
 
     const updatedCount = await page.textContent('.font-semibold');
 
-    // Chech the Number
-    expect(Number(updatedCount)).toBe(Number(initialCount) + 5);
+    console.log('Updated Count:', updatedCount);
+
+    // Check the Number
+    const updatedCountNumber = Number(updatedCount);
+    console.log('Expected Count:', initialCountNumber + 5);
+
+    expect(updatedCountNumber).toBe(initialCountNumber + 5);
 });

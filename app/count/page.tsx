@@ -3,37 +3,33 @@
 import { useState, useEffect } from 'react';
 
 const Count = () => {
-    const [targetNumber, setTargetNumber] = useState<number>(0);
-    const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
-    const [intervalTime, setIntervalTime] = useState(500);
+    const [targetNumber, setTargetNumber] = useState(0);
     const [increment, setIncrement] = useState(0);
 
     useEffect(() => {
-        return () => {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
-        };
-    }, [intervalId]);
+        let intervalId;
 
-    useEffect(() => {
-        if (increment > 0) {
-            const timeToTarget = increment * 500 / 5;
-            const id = setInterval(() => {
-                setTargetNumber((prevNumber) => {
-                    if (prevNumber + 1 === increment) {
-                        clearInterval(id);
+        const increaseNumber = () => {
+            intervalId = setInterval(() => {
+                setTargetNumber(prevNumber => {
+                    const nextNumber = prevNumber + 1;
+                    if (nextNumber === increment) {
+                        clearInterval(intervalId);
                         setIncrement(0);
                     }
-                    return prevNumber + 1;
+                    return nextNumber;
                 });
             }, 500);
-            setIntervalId(id);
-            setIntervalTime(timeToTarget > 0 ? timeToTarget : 500);
+        };
+
+        if (increment > 0) {
+            increaseNumber();
         }
+
+        return () => clearInterval(intervalId);
     }, [increment]);
 
-    const handleClick = async () => {
+    const handleClick = () => {
         if (increment === 0) {
             setIncrement(targetNumber + 5);
         } else {
